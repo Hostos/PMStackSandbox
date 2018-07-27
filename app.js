@@ -80,7 +80,8 @@ app.get("/campgrounds/new", function(req, res){
   res.render("new.ejs");
 });
 
-const port = 3000;
+// use port 3000 unless there exists a preconfigured port
+const port = process.env.port || 3000;
 app.listen(port, function() {
   console.log("server has started");
 });
